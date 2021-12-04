@@ -1,5 +1,7 @@
 function vncviewer(varargin)
 
+% https://tigervnc.org/doc/vncviewer.html
+
 
 %% Define vncviewer.exe.
 exe = fullfile(fileparts(mfilename('fullpath')), 'private', ...
@@ -7,7 +9,7 @@ exe = fullfile(fileparts(mfilename('fullpath')), 'private', ...
 
 
 %% Call vncviewer.
-cmd = sprintf('%s %s &', exe, strjoin(varargin, ' '));
+cmd = sprintf('"%s" %s &', exe, strjoin(varargin, ' '));
 dos(cmd);
 
 
